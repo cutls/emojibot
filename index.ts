@@ -20,6 +20,8 @@ router.post('/webhook', async (ctx, next) => {
 		const note = koaBody.body.note as MisskeyEntity.Note
 		mentionHandler(note)
 		return { success: true }
+	} else {
+		console.log('other type', koaBody)
 	}
 	return { success: false }
 })
